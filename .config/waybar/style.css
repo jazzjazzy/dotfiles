@@ -1,33 +1,68 @@
+/* Global Styles */
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "JetBrains Mono";
-    font-weight: bold;
-    font-size: 16px;
-    min-height: 0;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 14px;
+    min-height: 25px;
 }
 
+/* Waybar Background */
 window#waybar {
-    background: rgba(21, 18, 27, 0);
-    color: #cdd6f4;
+    background: rgba(30, 30, 46, 0.85); /* Semi-transparent */
+    border-radius: 10px;
+    border: 1px solid #89b4fa;
+    padding: 2px;
+    min-height: 26px;  /* Adjust for a thinner bar */
 }
 
-tooltip {
+/* CPU, Memory, Battery, and other modules */
+#cpu, #memory, #disk, #temperature, #battery, #backlight, #pulseaudio, #clock, #bluetooth, #custom-power,#custom-launcher,
+#custom-power_profile,
+#custom-weather,
+#custom-moon,
+#custom-wallpaper,
+#window,
+#clock,
+#battery,
+#network,
+#bluetooth,
+#custom-temperature,
+#custom-memory,
+#workspaces,
+#tray,
+#backlight 
+{
+    padding: 2px 8px;
+    border-radius: 5px;
     background: #1e1e2e;
+    color: #cdd6f4;
+    margin: 3px;
+}
+
+#custom-launcher {
+    font-size: 21px;
+    background: #1e1e2e;
+    color: #89b4fa;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces {
+    min-width: 10px;  /* Adjust as needed */
+    background: rgba(30, 30, 46, 0.85);  /* Transparent background */
+    padding: 2px;
     border-radius: 10px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #11111b;
 }
 
 #workspaces button {
-    padding: 5px;
-    color: #636777;
-    margin-right: 5px;
+    border-radius: 5px;
+    padding: 4px 8px;
+    background: transparent;
+    color: #cdd6f4;
+    transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-    background-color: #000;
+    background: #89b4fa;
+    color: #1e1e2e;
 }
 
 #workspaces button.focused {
@@ -44,36 +79,18 @@ tooltip {
 
 #workspaces button:hover {
     background: #11111b;
-    color: #11111b;
+    color: #ffffff;
     border-radius: 5px;
 }
 
-#custom-power_profile,
-#custom-weather,
-#custom-moon,
-#custom-wallpaper,
-#window,
-#clock,
-#battery,
-#pulseaudio,
-#network,
-#bluetooth,
-#custom-temperature,
-#custom-memory,
-#workspaces,
-#tray,
-#backlight {
+
+/* Tooltip (for Hover) */
+tooltip {
     background: #1e1e2e;
-    opacity: 0.8;
-    padding: 0px 10px;
-    /* margin: 3px 0px; */
-    margin: 0px 10px;
-    margin-top: 10px;
-    border: 1px solid #181825;
+    border-radius: 5px;
+    padding: 1px 5px;
+    color: #cdd6f4;
 }
-
-
-#
 
 #custom-memory {
     color: #eba0ac;
@@ -93,8 +110,8 @@ tooltip {
 }
 
 #tray {
-    border-radius: 10px;
-    margin-right: 10px;
+    border-radius: 18px;
+    margin-right: 8px;
 }
 
 #workspaces {
@@ -109,6 +126,7 @@ tooltip {
     color: #a6e3a1;
     border-left: 100px;
     border-right: 100px;
+    background-color: #F00;
 }
 
 #window {
@@ -122,6 +140,7 @@ tooltip {
     border-radius: 10px 0px 0px 10px;
     margin-left: 10px;
     border-right: 0px;
+    background: rgba(30, 30, 46, 0); /* Semi-transparent */
 }
 
 #network {
@@ -141,6 +160,7 @@ tooltip {
     color: #89b4fa;
     border-left: 0px;
     border-right: 0px;
+    font-size: 14px;
 }
 
 #pulseaudio.microphone {
@@ -149,6 +169,10 @@ tooltip {
     border-right: 0px;
     border-radius: 0px 10px 10px 0px;
     margin-right: 10px;
+}
+
+#pulseaudio.muted {
+    font-size: 14px;
 }
 
 #battery {

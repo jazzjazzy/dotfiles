@@ -2,11 +2,11 @@
 	"layer": "top",
   "position": "top",
 	"modules-left": ["custom/launcher","cpu","memory","disk","temperature","battery", "backlight", "pulseaudio"],
-	"modules-center": ["custom/window","hyprland/workspaces"],
+	"modules-center": ["hyprland/workspaces"],
 	"modules-right": ["river/tags","clock", "tray", "bluetooth", "custom/power"],
 
  "custom/launcher":{
-        "format": "",
+        "format": "󰣇",
         "on-click": "rofi -show drun",
         "tooltip": false,
         "interval": 0,
@@ -32,11 +32,22 @@
       "format": " {temperatureC}°C",
       "tooltip": false,
     },
+
 "hyprland/workspaces": {
-      "disable-scroll": true,
-		  "format": " {name}",
-      "output": "HDMI-A-5" 
+    "disable-scroll": true,
+    "format": "{name}",
+    "on-click": "hyprctl dispatch workspace {name}",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "on-click-right": "hyprctl dispatch workspace r+1",
+    "persistent-workspaces": {
+        "HDMI-A-4": [1, 2, 3],  
+        "HDMI-A-5": [4, 5, 6, 7],  
+        "DVI-D-1": [8, 9, 10]  
     },
+    "active-only": true
+},
+
 "battery": {
         "interval": 2,
         "states": {
@@ -60,13 +71,15 @@
 "pulseaudio": {
 		"format": "{icon} {volume}%",
     "format-bluetooth": "󰂰 {volume}%",
-		"format-muted": " 0%",
+		"format-muted": "󰖁  0%",
     "states": {
       "muted": 0
     },
 		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5% && pactl set-sink-volume @DEFAULT_SINK@ 100%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
 		"format-icons": {
-			"default": ["", "󰕾", ""]
+			"default": ["󰕿", "󰖀", "󰕾"]
 		}
 	},
 
@@ -76,7 +89,7 @@
 },
 
 "river/tags": {
-     "num-tags": 4,
+     "num-tags": 4
   },
 
 "clock": {
