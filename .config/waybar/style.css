@@ -15,7 +15,7 @@ window#waybar {
 }
 
 /* CPU, Memory, Battery, and other modules */
-#cpu, #memory, #disk, #temperature, #battery, #backlight, #pulseaudio, #clock, #bluetooth, #custom-power,#custom-launcher,
+#cpu, #memory, #disk, #temperature, #battery, #backlight, #pulseaudio, #clock, #bluetooth, #custom-power,#custom-launcher,#custom-terminal
 #custom-power_profile,
 #custom-weather,
 #custom-moon,
@@ -92,6 +92,12 @@ tooltip {
     color: #cdd6f4;
 }
 
+#custom-terminal {
+    color: #1586a8;
+    padding: 1px 10px;
+    font-size: 29px;
+}
+
 #custom-memory {
     color: #eba0ac;
     padding: 10px;
@@ -133,6 +139,14 @@ tooltip {
     border-radius: 10px;
     margin-left: 60px;
     margin-right: 60px;
+}
+
+#custom-window{
+    min-width: 400px;  /* Ensures a fixed width */
+    padding: 0 10px;  /* Adjusts spacing */
+    background: transparent; /* Keeps background clean */
+    color: whitesmoke;
+    font-size: 11px;
 }
 
 #clock {

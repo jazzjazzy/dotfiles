@@ -3,7 +3,7 @@
   "position": "top",
 	"modules-left": ["custom/launcher","cpu","memory","disk","temperature","battery", "backlight", "pulseaudio"],
 	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["river/tags","clock", "tray", "bluetooth", "custom/power"],
+	"modules-right": ["custom/window","custom/terminal","river/tags","clock", "tray", "bluetooth", "custom/power"],
 
  "custom/launcher":{
         "format": "󰣇",
@@ -86,6 +86,14 @@
 "custom/window": {
     "exec": "~/.config/waybar/scripts/window-title.sh",
     "interval": 1
+
+},
+
+"custom/terminal": {
+    "format": "󰆍",
+    "tooltip": false,
+    "on-click": "ghostty",
+    "interval": 0
 },
 
 "river/tags": {
