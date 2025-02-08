@@ -109,7 +109,7 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/emodipt-extend.omp.j
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-s# Ensure SSH agent is running
+# Ensure SSH agent is running
 if [ -z "$SSH_AUTH_SOCK" ] || ! pgrep -x ssh-agent > /dev/null; then
     eval "$(ssh-agent -s)"
 fi
