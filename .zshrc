@@ -109,9 +109,12 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/emodipt-extend.omp.j
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+s# Ensure SSH agent is running
+if [ -z "$SSH_AUTH_SOCK" ] || ! pgrep -x ssh-agent > /dev/null; then
+    eval "$(ssh-agent -s)"
+fi
 
-# Ensure SSH key persists across sessions
-# - Retrieves the SSH authentication socket from the systemd user service.
-# - Adds the GitHub SSH key silently to avoid manual re-entry.
-export SSH_AUTH_SOCK=$(systemctl --user show-environment | grep SSH_AUTH_SOCK | cut -d= -f2)
-ssh-add ~/.ssh/id_ed25519_github &> /dev/null
+# Automatically add SSH key if not already added
+ssh-add -l &>/dev/null || ssh-add ~/.ssh/id_ed25519_github &>/dev/null
+sh-add ~/.ssh/id_ed25519_github &> /dev/null
+
