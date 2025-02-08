@@ -3,7 +3,7 @@
   "position": "top",
 	"modules-left": ["custom/launcher","cpu","memory","disk","temperature","battery", "backlight", "pulseaudio"],
 	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["custom/window","custom/terminal","river/tags","clock", "tray", "bluetooth", "custom/power"],
+	"modules-right": ["custom/window","custom/terminal","river/tags","custom/weather","clock", "tray", "bluetooth", "custom/power"],
 
  "custom/launcher":{
         "format": "󰣇",
@@ -87,6 +87,21 @@
     "exec": "~/.config/waybar/scripts/window-title.sh",
     "interval": 1
 
+},
+
+"custom/weather": {
+  "tooltip": true,
+  "format": "{}",
+  "interval": 3600,
+  "exec": "~/.config/waybar/scripts/waybar-wttr.py",
+  "return-type": "json"
+},
+
+"custom/temperature": {
+  "tooltip": true,
+  "format": " {}",
+  "interval": 30,
+  "exec": "cpu"
 },
 
 "custom/terminal": {
