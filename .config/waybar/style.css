@@ -7,7 +7,7 @@
 
 /* Waybar Background */
 window#waybar {
-    background: rgba(30, 30, 46, 0.85); /* Semi-transparent */
+    background: rgba(30, 30, 46, 0.65); /* Semi-transparent */
     border-radius: 10px;
     border: 1px solid #89b4fa;
     padding: 2px;
@@ -15,7 +15,7 @@ window#waybar {
 }
 
 /* CPU, Memory, Battery, and other modules */
-#cpu, #memory, #disk, #temperature, #battery, #backlight, #pulseaudio, #clock, #bluetooth, #custom-power,#custom-launcher,#custom-terminal
+#cpu, #memory, #disk, #temperature, #battery, #backlight, #custom-network, #pulseaudio, #clock, #bluetooth, #custom-power,#custom-launcher,#custom-terminal
 #custom-power_profile,
 #custom-weather,
 #custom-moon,
@@ -32,10 +32,15 @@ window#waybar {
 #backlight 
 {
     padding: 2px 8px;
-    border-radius: 5px;
+    border-radius: 0px;
     background: #1e1e2e;
     color: #cdd6f4;
-    margin: 3px;
+    margin: 3px 0px;
+}
+
+#temperature.critical{
+    color:#f00;
+    background: rgb(241, 189, 207);
 }
 
 #custom-launcher {
@@ -43,6 +48,8 @@ window#waybar {
     background: #1e1e2e;
     color: #89b4fa;
     transition: all 0.3s ease-in-out;
+    padding-right: 15px;
+    margin-left: 3px;
 }
 
 #workspaces {
@@ -94,14 +101,18 @@ tooltip {
 
 #custom-terminal {
     color: #1586a8;
-    padding: 1px 10px;
+    padding: 1px 15px;
     font-size: 29px;
+    border-radius: 5px;
 }
 
 #custom-weather {
     color: #e7820f;
     padding: 1px 5px;
     font-size: 14px;
+    border-radius: 5px;
+    margin-left: 3px;
+    background-color: rgba(46, 37, 30, 0.418);
 }
 
 #custom-memory {
@@ -122,8 +133,9 @@ tooltip {
 }
 
 #tray {
-    border-radius: 18px;
-    margin-right: 8px;
+    border-radius: 10px 0px 0px 10px;
+    margin-right: 0px;
+    padding: 0px 10px;
 }
 
 #workspaces {
@@ -139,6 +151,12 @@ tooltip {
     border-left: 100px;
     border-right: 100px;
     background-color: #F00;
+}
+
+#custom-power {
+    border-radius: 0px 8px 8px 0px;
+    margin-right: 3px;
+    background: rgba(245, 66, 66, 0.384);
 }
 
 #window {
@@ -163,9 +181,7 @@ tooltip {
     background: rgba(30, 30, 46, 0); /* Semi-transparent */
 }
 
-#network {
-    color: #f9e2af;
-    border-radius: 10px 0px 0px 10px;
+#custom-network {
     border-left: 0px;
     border-right: 0px;
 }
@@ -173,11 +189,12 @@ tooltip {
 #bluetooth {
     color: #89b4fa;
     border-radius: 0px 10px 10px 0px;
-    margin-right: 10px
+    padding-right: 15px
 } 
 
 #pulseaudio {
     color: #89b4fa;
+    border-radius: 0px 10px 10px 0px;
     border-left: 0px;
     border-right: 0px;
     font-size: 14px;

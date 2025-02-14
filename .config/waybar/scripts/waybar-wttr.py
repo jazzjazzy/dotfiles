@@ -57,9 +57,9 @@ WEATHER_CODES = {
 
 data = {}
 
-city = "Firozpur"
+city = "Melbourne"
 
-weather = requests.get("https://wttr.in/Firozpur?format=j1").json()
+weather = requests.get("https://wttr.in/Melbourne?format=j1").json()
 
 
 def format_time(time):

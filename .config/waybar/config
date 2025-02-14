@@ -1,7 +1,7 @@
 {
 	"layer": "top",
   "position": "top",
-	"modules-left": ["custom/launcher","cpu","memory","disk","temperature","battery", "backlight", "pulseaudio"],
+	"modules-left": ["custom/launcher","cpu","memory", "disk","temperature","battery", "backlight", "custom/network","pulseaudio"],
 	"modules-center": ["hyprland/workspaces"],
 	"modules-right": ["custom/window","custom/terminal","river/tags","custom/weather","clock", "tray", "bluetooth", "custom/power"],
 
@@ -24,14 +24,26 @@
 "disk": {
       "interval": 4,
       "format": " {percentage_used:2}%",
-      "path": "/",
-      "tooltip": false
+      "path": "/home",
+      "tooltip": true
     },
+    
 "temperature": {
-      "critical-threshold": 65,
+      "critical-threshold": 80,
+      "thermal-zone": 1,
       "format": " {temperatureC}°C",
-      "tooltip": false,
+      "format-critical": " {temperatureC}°C!",
+      "tooltip": true
     },
+
+"network": {
+      "interface": "enp4s0", 
+      "format-wifi": "  {essid} ({signalStrength}%)",
+      "format-ethernet": "󰛳 {ifname}",
+      "tooltip-format": "{ifname}: {ipaddr}\nStrength: {signalStrength}%",
+      "format-disconnected": "Disconnected ⚠",
+      "interval": 5
+},
 
 "hyprland/workspaces": {
     "disable-scroll": true,
@@ -88,7 +100,12 @@
     "interval": 1
 
 },
-
+"custom/network": {
+    "exec": "~/.config/waybar/scripts/network_status.sh",
+    "interval": 5,
+    "return-type": "json",
+    "tooltip": true
+},
 "custom/weather": {
   "tooltip": true,
   "format": "{}",
