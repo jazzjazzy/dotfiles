@@ -43,8 +43,3 @@
 # resize-overlay-duration = 4s 200ms
 
 theme = Blue Matrix
-
-background = #000000
-background-opacity = 0.6
-background-blur-radius = 20
-
