@@ -119,3 +119,7 @@ ssh-add -l &>/dev/null || ssh-add ~/.ssh/id_ed25519_github &>/dev/null
 sh-add ~/.ssh/id_ed25519_github &> /dev/null
 
 export EDITOR="subl"
+
+source <(fzf --zsh)
+
+eval "$(zoxide init --cmd cd zsh)"
